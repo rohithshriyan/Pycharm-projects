@@ -1,0 +1,28 @@
+import random
+
+guesses_made = 0
+
+name = input('Hello! What is your name?\n')
+
+number = random.randint(1, 50)
+print('Well,' + str (name) + ', I am thinking of a number between 1 and 50.')
+
+while guesses_made < 10:
+
+    guess = int(input('Take a guess:\n'))
+
+    guesses_made += 1
+
+    if guess < number:
+        print('Your guess is too low.')
+
+    if guess > number:
+        print('Your guess is too high.')
+
+    if guess == number:
+        break
+
+if guess == number:
+    print('Good job,' + str (name) + '! You guessed my number in ' + str (guesses_made) + ' guesses!')
+else:
+    print('Nope. The number I was thinking of was ' + str (number))
