@@ -1,1 +1,33 @@
 
+import turtle
+myPen= turtle.Turtle()
+myPen.shape("arrow")
+
+count = 0
+while count < 4:
+    for i in range(0, 11):
+       if count == 0:
+            yFrom = (10 - i)
+            xTo = i
+            myPen.color("blue")
+       if count == 1:
+            yFrom = -i
+            xTo = (10 - i)
+            myPen.color("red")
+       if count == 2:
+            yFrom = -(10 - i)
+            xTo = -i
+            myPen.color("green")
+       if count == 3:
+            yFrom = i
+            xTo = -(10 - i)
+            myPen.color("black")
+
+       myPen.penup()
+       myPen.goto(0, 20 * yFrom)
+       myPen.pendown()
+       myPen.goto(20 * xTo, 0)
+
+    count = count + 1
+
+turtle.mainloop()
